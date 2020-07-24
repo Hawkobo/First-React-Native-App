@@ -1,14 +1,14 @@
 import { StatusBar } from 'expo-status-bar';
 import React from 'react';
-import { StyleSheet, Button, Image, Alert, Text, View } from 'react-native';
+import { StyleSheet, Button, Image, Alert, Text, View, SafeAreaView } from 'react-native';
 
 export default function App() {
   return (
-    <View style={styles.container}>
+    <SafeAreaView style={styles.container}>
       <View style={styles.body}>
-        <Text style={styles.titleText}>Welcome to my App!</Text>
         <StatusBar style="auto" />
         <Image style={styles.image} source={require('./assets/black fire crew logo.png')}/>
+        <Text style={styles.titleText}>Welcome to my App!</Text>
         <Button style={styles.button} title="Press me!"/>
       </View>
 
@@ -20,7 +20,7 @@ export default function App() {
         <Image style={styles.image} source={require('./assets/black fire crew logo.png')}/>
         <Button style={styles.button} title="Press me!"/>
       </View>
-    </View>
+    </SafeAreaView>
   );
 }
 
@@ -49,17 +49,16 @@ const styles = StyleSheet.create({
     borderRadius: 6,
     borderColor: 'black',
     borderWidth: 4,
-    backgroundColor: 'green',
+    backgroundColor: '#44839c',
   },
   button: {
     color: "#4287f5",
     paddingVertical: 24,
   },
   image: {
-    width: 120,
-    height: 50,
+    width: 150,
+    height: 150,
     paddingVertical: 24,
-    alignItems: 'center',
-    justifyContent: 'center',
+    resizeMode: 'contain',
   },
 });
