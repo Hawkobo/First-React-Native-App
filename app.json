@@ -3,7 +3,7 @@
   "displayName": "First React Native App",
   "expo": {
     "name": "First React Native App",
-    "slug": "First React Native App",
+    "slug": "first-react-native-app",
     "version": "1.0.0",
     "assetBundlePatterns": [
       "**/*"

@@ -3,22 +3,33 @@ import React from 'react';
 import { StyleSheet, Button, Image, Alert, Text, View, SafeAreaView } from 'react-native';
 
 export default function App() {
+  var counter = 0;
+
+  function ResetPresses() {
+    counter = 0;
+    Alert.alert("Presses reset.");
+  }
+
+function IncPresses() {
+  Alert.alert("You pressed me " + ++counter + " times!");
+}
   return (
     <SafeAreaView style={styles.container}>
       <View style={styles.body}>
         <StatusBar style="auto" />
-        <Image style={styles.image} source={require('./assets/black fire crew logo.png')}/>
+        <Image style={styles.image}
+        source={require('./assets/black fire crew logo.png')}/>
         <Text style={styles.titleText}>Welcome to my App!</Text>
-        <Button style={styles.button} title="Press me!"/>
-      </View>
-
-      <View style={{flex: 2, backgroundColor: 'white'}}></View>
-
-      <View style={styles.body}>
-        <Text style={styles.titleText}>Welcome to my App!</Text>
-        <StatusBar style="auto" />
-        <Image style={styles.image} source={require('./assets/black fire crew logo.png')}/>
-        <Button style={styles.button} title="Press me!"/>
+        <View style={styles.buttonSpace}>
+          <Button style={styles.button}
+          title="Press me!"
+          onPress={IncPresses}/>
+          <Button style={styles.button}
+          title="Reset"
+          onPress={ResetPresses}/>
+          <Button style={styles.button}
+          title="Total Play Time"/>
+          </View>
       </View>
     </SafeAreaView>
   );
@@ -35,7 +46,7 @@ const styles = StyleSheet.create({
   container: {
     flex: 1,
     padding: 10,
-    backgroundColor: 'white',
+    backgroundColor: '#44839c',
     alignItems: 'center',
     justifyContent: 'center',
   },
@@ -44,7 +55,7 @@ const styles = StyleSheet.create({
     backgroundColor: 'blue',
   },
   body: {
-    flex: 9,
+    flex: 1,
     padding: 50,
     borderRadius: 6,
     borderColor: 'black',
@@ -53,7 +64,11 @@ const styles = StyleSheet.create({
   },
   button: {
     color: "#4287f5",
-    paddingVertical: 24,
+  },
+  buttonSpace: {
+    flex: 1,
+    flexDirection: 'column',
+    justifyContent: 'space-between',
   },
   image: {
     width: 150,
