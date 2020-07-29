@@ -2,7 +2,7 @@ import { StatusBar } from 'expo-status-bar';
 import React from 'react';
 import { StyleSheet, Button, Image, Alert, Text, View, SafeAreaView } from 'react-native';
 
-export default function App() {
+export default function StartScreen() {
   var counter = 0;
 
   function ResetPresses() {
